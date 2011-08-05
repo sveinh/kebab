@@ -17,6 +17,20 @@ print "Payment method:
 	[1] Bank transfer
 	[2] Cash \n";
 ### Organize in functions, use return values for flow ###
+# 
+# LDAP auth
+#
+
+sub sub_ldap_auth{
+	sub getContainers {}
+        sub getConfigurationFiles { $self->servicesProvided filtered on objectclass; }
+        sub getVirtualHosts { sorted $self->servicesProvided filtered on objectclass; }
+
+# Maybe:
+       sub getNetworkBindings { list of webserver's vhosts' network bindings. }
+
+};
+
 sub pm{
 chop($pmethod = <STDIN>);
 	if($pmethod =~/^[0-2]$/){
@@ -35,3 +49,4 @@ chop($pmethod = <STDIN>);
 return 0;
 }
 print %order;
+
